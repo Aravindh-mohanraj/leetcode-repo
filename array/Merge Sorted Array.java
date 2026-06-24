@@ -1,0 +1,16 @@
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int[] a=nums1.clone();
+        int i=0,j=0,k=0;
+        while(i<m&&j<n){
+            if(a[i]<=nums2[j]){
+                nums1[k++]=a[i++];
+            }
+            else if(a[i]>nums2[j]){
+                nums1[k++]=nums2[j++];
+            }
+        }
+        while(i<m)nums1[k++]=a[i++];
+        while(j<n)nums1[k++]=nums2[j++];
+    }
+}
